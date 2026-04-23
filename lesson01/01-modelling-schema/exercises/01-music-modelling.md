@@ -53,12 +53,29 @@ Use this table as a guide when writing your `CREATE TABLE` statements.
 
 **Task:** Write a script that creates a new database called `music`. Remember to switch to a safe context first so you are not connected to a database that may conflict with the operation.
 
+
 **Hints:**
 - Look at how `01-create-database.sql` switches context before issuing `CREATE DATABASE`.
 - Use `GO` to separate each batch.
 
 **Suggested solution:** [01-create-database.sql](../01-exercise-answers/01-create-database.sql)
+-- Växla till master-databasen för att säkerställa en säker kontext
+USE master;
+GO
 
+-- Kontrollera om databasen redan finns och ta bort den om så önskas 
+-- (Valfritt, men bra för skript som ska kunna köras flera gånger)
+IF EXISTS (SELECT * FROM sys.databases WHERE name = 'music')
+BEGIN
+DROP DATABASE music;
+END
+GO
+
+CREATE DATABASE music;
+GO
+
+USE music;
+GO
 ---
 
 ## Exercise 2 – Create a Drop-Database Script

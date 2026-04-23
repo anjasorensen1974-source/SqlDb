@@ -41,6 +41,7 @@ public MusicGroup MusicGroup { get; set; }           // many-to-one: Album belon
 
 **Expected outcome:** Running the script against the `music` database succeeds without errors. Attempting to insert two rows with the same key value is rejected.
 
+
 ---
 
 ## Exercise 2 – Add the `Album → MusicGroup` Relationship
