@@ -15,12 +15,13 @@ LEFT OUTER JOIN dbo.Address a ON f.AddressId = a.AddressId;
 --Addresses not linked to any friend get NULL in friend columns
 SELECT f.FirstName, f.LastName, a.StreetAddress, a.City
 FROM dbo.friend f 
-RIGHT OUTER JOIN dbo.Address a ON f.AddressId = a.AddressId;
+RIGHT OUTER JOIN dbo.Address a ON f.AddressId = a.AddressId
+WHERE f.FriendId IS NULL; --This will give you only the addresses not linked to any friend
 
 --Use Full Outer join to get ALL Friends and ALL Addresses
 --Friends without an address get NULL in address columns
 --Addresses not linked to any friend get NULL in friend columns
-SELECT f.FirstName, f.LastName, a.StreetAddress, a.City
+SELECT *
 FROM dbo.friend f 
 FULL OUTER JOIN dbo.Address a ON f.AddressId = a.AddressId;
 
