@@ -1,0 +1,27 @@
+use sakila;
+GO
+
+USE sakila;
+GO
+
+DECLARE @minDays INT = 6;
+
+Select  
+rental_id,
+rental_date,
+return_date,
+DATEDIFF(day, rental_date, return_date) AS RentalDays
+FROM dbo.rental
+WHERE DATEDIFF(day, rental_date, return_date) >= @minDays
+ORDER BY RentalDays DESC;
+GO
+
+--=================================================
+
+## Exercise 1 – Filter with a comparison operator and a variable
+
+**Task:** Declare an `INT` variable called `@minDays` and set it to `6`. Write a query that returns `rental_id`, `rental_date`, `return_date`, and a calculated column `RentalDays` for all rentals where the number of days between `rental_date` and `return_date` is **greater than or equal to** `@minDays`. Order by `RentalDays` descending.
+
+**Hint:** Use `DATEDIFF(day, rental_date, return_date)`.
+
+**Expected outcome:** All completed rentals lasting 6 or more days, ordered from longest to shortest.

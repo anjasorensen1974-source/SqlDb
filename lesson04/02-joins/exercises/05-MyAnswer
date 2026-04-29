@@ -1,0 +1,12 @@
+use music;
+
+SELECT
+    a.FirstName,
+    a.LastName,
+    mg.Name  AS MusicGroupName,
+    mg.Genre
+FROM dbo.Music AS a
+INNER JOIN dbo.ArtistMusicGroup AS amg ON a.ArtistId     = amg.ArtistId
+INNER JOIN dbo.MusicGroup       AS mg  ON amg.MusicGroupId = mg.MusicGroupId
+ORDER BY mg.Genre, a.LastName;
+GO
