@@ -27,7 +27,11 @@ To edit an existing table, right-click the table name and choose **Design**.
 
 ## Exercise 1 – Create the `Artist` Table
 
-**Task:** Use the Table Designer to create the `Artist` table in the `music` database with the columns derived from the C# model below.
+USE tempdb;
+GO
+
+DROP DATABASE music;
+GO
 
 ```csharp
 // Artist.cs

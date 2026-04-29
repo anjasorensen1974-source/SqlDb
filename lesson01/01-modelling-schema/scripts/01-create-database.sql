@@ -1,5 +1,5 @@
 USE tempdb;
 GO
 
-CREATE DATABASE friends;
+CREATE DATABASE music;
 GO
