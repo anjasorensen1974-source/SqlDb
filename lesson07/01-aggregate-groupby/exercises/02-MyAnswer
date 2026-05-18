@@ -1,0 +1,15 @@
+USE friends;
+GO
+
+SELECT f.FriendId,
+    CONCAT_WS(' ', f.FirstName, f.LastName) AS FullName,
+    COUNT(*) AS PetCount
+FROM dbo.Friend f
+    INNER JOIN dbo.Pet p ON f.FriendId = p.OwnerId
+GROUP BY f.FriendId, CONCAT_WS(' ', f.FirstName, f.LastName)
+ORDER BY 3 DESC;
+
+SELECT AnimalKind, COUNT(*) AS PetCount
+FROM dbo.Pet
+GROUP BY AnimalKind
+ORDER BY 2 DESC;

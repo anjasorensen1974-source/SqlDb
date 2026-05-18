@@ -1,0 +1,15 @@
+SELECT 
+		c.land AS Land,
+		YEAR(orderdatum) AS År, 
+		MONTH(orderdatum) AS Månad, 
+		SUM(orderVärde) AS TotaltOrderVärde
+FROM dbo.order o
+	INNER JOIN dbo.customer c ON o.customerId = c.customerId
+GROUP BY
+		c.land, 
+		YEAR(orderDatum), 
+		MONTH(orderDatum)
+ORDER BY 
+		Land ASC, 
+		År DESC, 
+		Månad DESC;

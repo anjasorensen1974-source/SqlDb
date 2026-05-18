@@ -32,3 +32,10 @@ FROM (
     SELECT first_name FROM dbo.customer 
     EXCEPT
     SELECT first_name FROM dbo.actor) AS f;
+
+
+SELECT YEAR(payment_date) AS [Year], MONTH(payment_date) AS [Month], SUM(amount) AS TotaltOrdervarde
+FROM dbo.payment
+GROUP BY YEAR(payment_date), MONTH(payment_date)
+ORDER BY [Year] DESC, [Month] DESC;
+ 

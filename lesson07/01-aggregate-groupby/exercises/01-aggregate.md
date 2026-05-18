@@ -61,3 +61,4 @@ Write two queries against the `friends` database.
 ---
 
 **Answer:** [01-aggregate.sql](../exercise-answers/01-aggregate.sql)
+

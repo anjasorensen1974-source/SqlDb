@@ -1,0 +1,18 @@
+USE friends;
+GO
+--Aggregate from Friend and Pet tables
+-- Query 1: Aggregate statistics from the Friend table
+SELECT
+    COUNT(*) AS TotalFriends,
+    COUNT(Birthday) AS FriendsWithBirthday,
+    COUNT(*) - COUNT(Birthday) AS FriendsWithoutBirthday,
+    MIN(Birthday) AS EarliestBirthday,
+    MAX(Birthday) AS LatestBirthday
+FROM dbo.Friend;
+
+-- Query 2: Aggregate statistics from the Pet table
+SELECT
+    COUNT(*) AS TotalPets,
+    COUNT(DISTINCT AnimalKind) AS DistinctKinds,
+    COUNT(DISTINCT AnimalMood) AS DistinctMoods
+FROM dbo.Pet;
