@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+public class Machine
+{
+    [Key]
+    public string MachineId { get; set; }
+    public string Hall { get; set; }
+    public string ModelName { get; set; }
+    public string Make { get; set; }
+    public string Function { get; set; }
+    public int PurchaseYear { get; set; }
+
+    // Navigationsegenskaper
+    public ICollection<MachineLog> MachineLogs { get; set; }
+}
+
+public class MachineLog
+{
+    [Key]
+    public int LogId { get; set; }
+    
+    [ForeignKey("Machine")]
+    public string MachineId { get; set; }
+    public Machine Machine { get; set; }
+
+    public DateTime StartTime { get; set; }
+    public DateTime? StopTime { get; set; } // Kan vara null om maskinen fortfarande är igång
+
+    // Navigationsegenskap
+    public ICollection<ErrorLog> ErrorLogs { get; set; }
+}
+
+public class ErrorLog
+{
+    [Key]
+    public int ErrorLogId { get; set; }
+
+    [ForeignKey("MachineLog")]
+    public int LogId { get; set; }
+    public MachineLog MachineLog { get; set; }
+
+    public string ErrorCode { get; set; }
+    public DateTime ErrorTime { get; set; }
+}
