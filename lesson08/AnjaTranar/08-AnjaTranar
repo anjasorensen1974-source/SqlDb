@@ -1,3 +1,26 @@
+use sakila;
+GO
+DROP TABLE if EXISTS [dbo].[order]
+DROP TABLE if EXISTS [dbo].[customer]
+
+
+
+create table [dbo].[customer]
+(
+	customerId int primary key,
+	namn varchar(50),
+	land varchar(50)
+);
+
+CREATE TABLE [dbo].[order]
+(
+	orderId int identity(1,1) primary key,
+	customerId int,
+	orderDatum date,
+	orderVärde decimal(10,2),
+	--FOREIGN KEY (customerId) REFERENCES dbo.customer(customerId)
+);
+
 SELECT 
 		c.land AS Land,
 		YEAR(orderdatum) AS År, 

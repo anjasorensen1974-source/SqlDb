@@ -27,9 +27,8 @@ public class MachineLog
     public Machine Machine { get; set; }
 
     public DateTime StartTime { get; set; }
-    public DateTime? StopTime { get; set; } // Kan vara null om maskinen fortfarande är igång
+    public DateTime? StopTime { get; set; } 
 
-    // Navigationsegenskap
     public ICollection<ErrorLog> ErrorLogs { get; set; }
 }
 
