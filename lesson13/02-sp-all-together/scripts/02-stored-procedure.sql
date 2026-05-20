@@ -1,7 +1,7 @@
 USE friends;
 GO
 
---Create a stored procedure that inserts an Artist into the dbo.artist table
+--Create a stored procedure that inserts a Friend into the dbo.friend table
 --Putting it together, return code, default parameters and output parameters with
 --Transactions and Error Handling and logging
 CREATE OR ALTER PROCEDURE dbo.usp_InsertFriend

@@ -1,6 +1,13 @@
 USE friends;
 GO
 
+--House cleaning
+DROP FUNCTION IF EXISTS dbo.udf_MostPets;
+DROP FUNCTION IF EXISTS dbo.udf_LeastFriends;
+GO
+
+--Create a table-valued function that returns the country with the most pets of a given kind, 
+--and the number of those pets
 CREATE OR ALTER FUNCTION dbo.udf_MostPets(@AnimalKind As NVARCHAR(20))
 RETURNS TABLE AS
 RETURN 
@@ -13,6 +20,7 @@ RETURN
     ORDER BY 2 DESC
 GO
 
+--Create a table-valued function that returns the country with the least friends, and the number of friends
 CREATE OR ALTER FUNCTION dbo.udf_LeastFriends()
 RETURNS TABLE AS
 RETURN 
@@ -35,7 +43,7 @@ WHERE Country IN (
     SELECT Country from dbo.udf_LeastFriends());
 
 
---House cleaning only for the example
+--House cleaning
 DROP FUNCTION IF EXISTS dbo.udf_MostPets;
 DROP FUNCTION IF EXISTS dbo.udf_LeastFriends;
 GO

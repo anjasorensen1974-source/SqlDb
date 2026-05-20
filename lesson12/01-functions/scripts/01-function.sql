@@ -1,6 +1,7 @@
 USE friends;
 GO
---House cleaning only for the example
+
+--House cleaning
 DROP FUNCTION IF EXISTS dbo.udf_FullName;
 DROP FUNCTION IF EXISTS dbo.udf_FullNameEmail;
 GO
@@ -30,7 +31,7 @@ GO
 
 SELECT FriendId, dbo.udf_FullNameEmail(FirstName, LastName, Email) [Contact] from dbo.Friend;
 
---House cleaning only for the example
+--House cleaning
 DROP FUNCTION IF EXISTS dbo.udf_FullName;
 DROP FUNCTION IF EXISTS dbo.udf_FullNameEmail;
 GO

@@ -2,25 +2,45 @@ USE friends;
 GO
 
 --Add a Best Friend column to the Friends table
-ALTER TABLE dbo.Friend 
-ADD BestFriendId uniqueidentifier NULL;
+ALTER TABLE dbo.Friend  
+ADD FatherId uniqueidentifier NULL;
 GO
 
---set a couple of Best Friends
+--set a couple of Fathers
 UPDATE dbo.Friend
-SET BestFriendId = (SELECT FriendId FROM dbo.Friend WHERE FirstName = 'Neville' AND LastName = 'Longbottom')
+SET FatherId = (SELECT FriendId FROM dbo.Friend WHERE FirstName = 'Neville' AND LastName = 'Longbottom')
 WHERE FirstName = 'Luna' AND LastName = 'Weasley';
 
 UPDATE dbo.Friend
-SET BestFriendId = (SELECT FriendId FROM dbo.Friend WHERE FirstName = 'Luna' AND LastName = 'Weasley')
-WHERE FirstName = 'Neville' AND LastName = 'Longbottom';
+SET FatherId = (SELECT FriendId FROM dbo.Friend WHERE FirstName = 'Neville' AND LastName = 'Longbottom')
+WHERE FirstName = 'Harry' AND LastName = 'Took';
 
---use a self join to get Best friend details
-SELECT CONCAT_WS(' ', f.FirstName, f.LastName, 'is best friend with', bf.FirstName, bf.LastName)
+UPDATE dbo.Friend
+SET FatherId = (SELECT FriendId FROM dbo.Friend WHERE FirstName = 'Ron' AND LastName = 'Skywalker')
+WHERE FirstName = 'Padma' AND LastName = 'Patil';
+
+--use a self join to get Father details
+SELECT CONCAT_WS(' ', f.FirstName, f.LastName) AS Child,
+       CONCAT_WS(' ', father.FirstName, father.LastName) AS Father
 FROM dbo.friend f 
-INNER JOIN dbo.friend bf
-ON f.BestFriendId = bf.FriendId;
+INNER JOIN dbo.friend father    
+ON f.FatherId = father.FriendId;
 
---remove the BestFriend column
+--outer join to see all children without a father
+SELECT *
+FROM dbo.friend f 
+LEFT JOIN dbo.friend father    
+ON f.FatherId = father.FriendId
+WHERE father.FriendId IS NULL;
+
+SELECT CONCAT_WS(' ', f.FirstName, f.LastName) AS Child,
+       CONCAT_WS(' ', father.FirstName, father.LastName) AS Father
+FROM dbo.friend f 
+LEFT JOIN dbo.friend father    
+ON f.FatherId = father.FriendId
+WHERE father.FriendId IS NULL;
+
+
+--remove the Father column
 ALTER TABLE dbo.Friend 
-DROP COLUMN BestFriendId;
+DROP COLUMN FatherId;

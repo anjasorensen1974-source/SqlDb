@@ -1,0 +1,97 @@
+[
+  {
+    "FriendId": "4B032545-0444-4CC1-8D7A-05F31ACD0569",
+    "FirstName": "Harry",
+    "LastName": "Took",
+    "Email": "harry.took@gmail.com",
+    "Birthday": "1990-03-14",
+    "AddressId": "1EF8BD08-0E1B-4DC9-9CF5-48C7106649AF"
+  },
+  {
+    "FriendId": "E17C28C5-8EB5-46C6-A45F-1125A895FADE",
+    "FirstName": "Ginny",
+    "LastName": "Lovegood",
+    "AddressId": "14C31B32-9AC4-4BE9-A2D7-9CADCAF00FA9"
+  },
+  {
+    "FriendId": "D7333D69-030F-4882-8DE0-50E547F99BA9",
+    "FirstName": "Draco",
+    "LastName": "Snape",
+    "Email": "draco.snape@gmail.com",
+    "AddressId": "CDC34ADB-BBBB-46DC-B701-2A26990A4E55"
+  },
+  {
+    "FriendId": "F1E6B08E-DCE1-4F14-A5A0-58C64CF8EF44",
+    "FirstName": "Sam",
+    "LastName": "Baggins",
+    "Email": "sam.baggins@gmail.com",
+    "Birthday": "1992-11-05",
+    "AddressId": "EC4C44D2-2787-4AC6-BFB5-BDE970DA63C9"
+  },
+  {
+    "FriendId": "2C8AB869-1895-4CF5-968F-619A5FCE0604",
+    "FirstName": "Ron",
+    "LastName": "Skywalker",
+    "Email": "ron.skywalker@gmail.com",
+    "Birthday": "1988-12-20",
+    "AddressId": "B63F7BF3-B388-405C-8932-F252C0D48E97"
+  },
+  {
+    "FriendId": "CCC9F40C-6E54-48FD-AE67-6B2BA9F9CEED",
+    "FirstName": "Albus",
+    "LastName": "Potter",
+    "Email": "albus.potter@gmail.com",
+    "Birthday": "2001-06-18",
+    "AddressId": "94D83117-4B5A-42F0-80A5-3FAFBBA67302"
+  },
+  {
+    "FriendId": "BBBF36E7-9F39-4845-9050-A305F443C7A8",
+    "FirstName": "Severus",
+    "LastName": "Gamgee",
+    "Email": "severus.gamgee@gmail.com",
+    "Birthday": "1985-07-22",
+    "AddressId": "646248A3-FC73-42C3-AB10-F2E417DBF8D3"
+  },
+  {
+    "FriendId": "7A8137F4-900E-4C23-AFF4-BB22BE5840B2",
+    "FirstName": "Saruman",
+    "LastName": "Malfoy",
+    "Email": "saruman.malfoy@gmail.com"
+  },
+  {
+    "FriendId": "DD91DC30-9EFB-4C87-BB65-BB453E332517",
+    "FirstName": "Neville",
+    "LastName": "Longbottom",
+    "Email": "neville.lb@gmail.com",
+    "Birthday": "1993-08-11",
+    "AddressId": "B88E5103-7685-4153-8B58-1F6779888366"
+  },
+  {
+    "FriendId": "446524B2-8EBA-4E61-B33E-BBA7FD9514E1",
+    "FirstName": "Hermione",
+    "LastName": "Granger",
+    "AddressId": "6C63C34B-3FA4-4000-8847-9DBCD45585CA"
+  },
+  {
+    "FriendId": "6C98CA53-0345-46BE-9BD5-C9BDE6D9D15F",
+    "FirstName": "Padma",
+    "LastName": "Patil",
+    "Email": "padma.patil@gmail.com",
+    "Birthday": "1997-05-15"
+  },
+  {
+    "FriendId": "BBB4FDB3-F949-4DCC-95FE-E0951766784C",
+    "FirstName": "Lord",
+    "LastName": "Dumbledore",
+    "Birthday": "1978-01-30",
+    "AddressId": "0AF6E4B5-5522-4327-97DD-E16BAB7A7C60"
+  },
+  {
+    "FriendId": "3D9F020B-B610-43B5-8C5F-E8CC2CA8DA4D",
+    "FirstName": "Luna",
+    "LastName": "Weasley",
+    "Email": "luna.weasley@gmail.com",
+    "Birthday": "1995-04-02",
+    "AddressId": "6522D2B5-A485-4BF1-A42B-AE67EF99C87F"
+  }
+]

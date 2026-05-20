@@ -1,18 +1,7 @@
 USE master;
 GO
 --House cleaning
-IF EXISTS (SELECT 1 FROM sys.server_principals WHERE name = N'ServerViewOnly' AND type = 'R')
-BEGIN
-    -- Remove Frodo from the role only if they are a member
-    IF EXISTS (
-        SELECT 1 FROM sys.server_role_members rm
-            INNER JOIN sys.server_principals m ON rm.member_principal_id = m.principal_id
-            INNER JOIN sys.server_principals r ON rm.role_principal_id   = r.principal_id
-        WHERE m.name = N'Frodo' AND r.name = N'ServerViewOnly')
-        ALTER SERVER ROLE ServerViewOnly DROP MEMBER Frodo;
-
-    DROP SERVER ROLE ServerViewOnly;
-END
+--remove the login if it already exists
 IF SUSER_ID (N'Frodo') IS NOT NULL
     DROP LOGIN Frodo;
 

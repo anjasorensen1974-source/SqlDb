@@ -35,3 +35,13 @@ VALUES
     ('Fish',   'Splash',  'Happy',   @Neville),
     ('Bird',   'Pepper',  'Sulky',   @Padma);
 GO
+
+
+INSERT INTO dbo.Pet
+    (AnimalKind, Name, AnimalMood, OwnerId)
+VALUES
+    ('Cat',    'Charlie', 'Happy',  NULL),
+    ('Fish',   'Wanda',   'Lazy',   NULL),
+    ('Dog',    'Simba',   'Hungry', NULL),
+    ('Bird',   'Max',     'Buzy',   NULL),
+    ('Cat',    'Cooper',  'Sleepy', NULL);

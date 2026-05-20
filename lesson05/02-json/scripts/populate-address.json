@@ -1,0 +1,128 @@
+[
+  {
+    "AddressId": "5798AE0E-F3F4-453B-BC53-1E6DBF3E0338",
+    "StreetAddress": "Storgatan 22",
+    "ZipCode": 85300,
+    "City": "Sundsvall",
+    "Country": "Sweden"
+  },
+  {
+    "AddressId": "B88E5103-7685-4153-8B58-1F6779888366",
+    "StreetAddress": "Drottninggatan 4",
+    "ZipCode": 11123,
+    "City": "GÃ¶teborg",
+    "Country": "Sweden"
+  },
+  {
+    "AddressId": "CDC34ADB-BBBB-46DC-B701-2A26990A4E55",
+    "StreetAddress": "Eerikinkatu 17",
+    "ZipCode": 89231,
+    "City": "Tampere",
+    "Country": "Finland"
+  },
+  {
+    "AddressId": "94D83117-4B5A-42F0-80A5-3FAFBBA67302",
+    "StreetAddress": "Classensgade 9",
+    "ZipCode": 18924,
+    "City": "Ã…rhus",
+    "Country": "Denmark"
+  },
+  {
+    "AddressId": "1EF8BD08-0E1B-4DC9-9CF5-48C7106649AF",
+    "StreetAddress": "SvedjevÃ¤gen 1",
+    "ZipCode": 18399,
+    "City": "MalmÃ¶",
+    "Country": "Sweden"
+  },
+  {
+    "AddressId": "7A95643A-235A-4275-9F68-4BAF1E59ED7A",
+    "StreetAddress": "Aleksanterinkatu 9",
+    "ZipCode": 33100,
+    "City": "Turku",
+    "Country": "Finland"
+  },
+  {
+    "AddressId": "31C88C88-13C9-4810-BC9C-5E1926FF027C",
+    "StreetAddress": "Grensen 15",
+    "ZipCode": 31400,
+    "City": "Bergen",
+    "Country": "Norway"
+  },
+  {
+    "AddressId": "639F4048-DA3A-48A9-9A2D-5FEF420676EE",
+    "StreetAddress": "Pohjoistranta 18",
+    "ZipCode": 89231,
+    "City": "Oulu",
+    "Country": "Finland"
+  },
+  {
+    "AddressId": "DE1DCD0E-F4D6-46DD-A0A4-82813F64C127",
+    "StreetAddress": "NÃ¸rreport 3",
+    "ZipCode": 54300,
+    "City": "Odense",
+    "Country": "Denmark"
+  },
+  {
+    "AddressId": "14C31B32-9AC4-4BE9-A2D7-9CADCAF00FA9",
+    "StreetAddress": "Aker Brygge 2",
+    "ZipCode": 21300,
+    "City": "Oslo",
+    "Country": "Norway"
+  },
+  {
+    "AddressId": "6C63C34B-3FA4-4000-8847-9DBCD45585CA",
+    "StreetAddress": "SÃ¥gveien 5",
+    "ZipCode": 12345,
+    "City": "Stavanger",
+    "Country": "Norway"
+  },
+  {
+    "AddressId": "6522D2B5-A485-4BF1-A42B-AE67EF99C87F",
+    "StreetAddress": "Kungsgatan 12",
+    "ZipCode": 11122,
+    "City": "Stockholm",
+    "Country": "Sweden"
+  },
+  {
+    "AddressId": "EC4C44D2-2787-4AC6-BFB5-BDE970DA63C9",
+    "StreetAddress": "Svanevej 7",
+    "ZipCode": 18924,
+    "City": "Aahlborg",
+    "Country": "Denmark"
+  },
+  {
+    "AddressId": "3B7993EE-C77C-4BB5-80E7-C29697DAE436",
+    "StreetAddress": "Biblioteksgatan 7",
+    "ZipCode": 41100,
+    "City": "Lund",
+    "Country": "Sweden"
+  },
+  {
+    "AddressId": "0AF6E4B5-5522-4327-97DD-E16BAB7A7C60",
+    "StreetAddress": "Vasagatan 3",
+    "ZipCode": 18399,
+    "City": "LinkÃ¶ping",
+    "Country": "Sweden"
+  },
+  {
+    "AddressId": "D2E4868D-3D66-4A4E-9665-E241D07CC6AB",
+    "StreetAddress": "Mannerheimintie 5",
+    "ZipCode": 100,
+    "City": "Helsinki",
+    "Country": "Finland"
+  },
+  {
+    "AddressId": "B63F7BF3-B388-405C-8932-F252C0D48E97",
+    "StreetAddress": "StrÃ¸get 8",
+    "ZipCode": 11000,
+    "City": "Copenhagen",
+    "Country": "Denmark"
+  },
+  {
+    "AddressId": "646248A3-FC73-42C3-AB10-F2E417DBF8D3",
+    "StreetAddress": "Frognerveien 10",
+    "ZipCode": 12345,
+    "City": "Dramen",
+    "Country": "Norway"
+  }
+]

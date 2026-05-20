@@ -1,6 +1,10 @@
 USE friends;
 GO
 
+-- ------------------------------------------------------------------
+-- the VULNERABLE approach (do NOT do this)
+-- ------------------------------------------------------------------
+
 --SQL Injection use ; to run several SQL statements
 --Lets create a temp table as we dont want to destroy a real table
 DROP TABLE IF EXISTS #tmpPet

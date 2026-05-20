@@ -1,6 +1,10 @@
 USE friends;
 GO
 
+-- ------------------------------------------------------------------
+-- the VULNERABLE approach (do NOT do this)
+-- ------------------------------------------------------------------
+
 --SQL Injection example ''='' is Always True
 DECLARE @UserFirstName NVARCHAR(50); -- could user name
 DECLARE @UserLastName NVARCHAR(50); -- could be user password

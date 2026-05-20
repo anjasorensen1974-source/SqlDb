@@ -26,6 +26,11 @@ GO
 EXEC dbo.usp_Actors;
 
 
+
+-- List all stored procedures in the database
+SELECT SCHEMA_NAME(schema_id) +'.' + name AS ProcedureName
+FROM   sys.procedures;
+
 --House cleaning only for the example
 DROP FUNCTION IF EXISTS dbo.udf_FullName;
 DROP PROCEDURE IF EXISTS dbo.usp_Actors;

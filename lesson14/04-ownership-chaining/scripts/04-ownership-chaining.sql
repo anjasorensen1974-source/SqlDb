@@ -47,7 +47,7 @@ END CATCH;
 --Now, added
 SELECT * FROM dbo.Friend WHERE LastName IN ('Doe')  
 
---end the impersonation session
+--end the impersonation session 
 REVERT;
 
 --House cleaning
@@ -58,3 +58,4 @@ BEGIN
 END
 DROP ROLE IF EXISTS gstUsrRole;
 DROP USER IF EXISTS GandalfUser;
+DROP PROCEDURE IF EXISTS dbo.usp_InsertFriend;

@@ -12,16 +12,16 @@ DECLARE @Albus    uniqueidentifier = (SELECT FriendId FROM Friend WHERE FirstNam
 DECLARE @Draco    uniqueidentifier = (SELECT FriendId FROM Friend WHERE FirstName = 'Draco'    AND LastName = 'Snape');
 
 -- Quotes
-DECLARE @Q1  uniqueidentifier = (SELECT QuoteId FROM Quote WHERE Author = 'Woody Allen');
-DECLARE @Q2  uniqueidentifier = (SELECT QuoteId FROM Quote WHERE Author = 'Billy Connolly');
-DECLARE @Q3  uniqueidentifier = (SELECT QuoteId FROM Quote WHERE Author = 'Lily Tomlin');
-DECLARE @Q4  uniqueidentifier = (SELECT QuoteId FROM Quote WHERE Author = 'Terry Pratchett');
-DECLARE @Q5  uniqueidentifier = (SELECT QuoteId FROM Quote WHERE Author = 'Winnie the Pooh');
-DECLARE @Q6  uniqueidentifier = (SELECT QuoteId FROM Quote WHERE Author = 'Jim Carrey');
-DECLARE @Q7  uniqueidentifier = (SELECT QuoteId FROM Quote WHERE Author = 'Steve Martin');
-DECLARE @Q8  uniqueidentifier = (SELECT QuoteId FROM Quote WHERE Author = 'Anonymous');
-DECLARE @Q9  uniqueidentifier = (SELECT QuoteId FROM Quote WHERE Author = 'Will Rogers');
-DECLARE @Q10 uniqueidentifier = (SELECT QuoteId FROM Quote WHERE Author = 'Billie Burke');
+DECLARE @Q1  uniqueidentifier = (SELECT TOP 1 QuoteId FROM Quote WHERE Author = 'Woody Allen');
+DECLARE @Q2  uniqueidentifier = (SELECT TOP 1 QuoteId FROM Quote WHERE Author = 'Billy Connolly');
+DECLARE @Q3  uniqueidentifier = (SELECT TOP 1 QuoteId FROM Quote WHERE Author = 'Lily Tomlin');
+DECLARE @Q4  uniqueidentifier = (SELECT TOP 1 QuoteId FROM Quote WHERE Author = 'Terry Pratchett');
+DECLARE @Q5  uniqueidentifier = (SELECT TOP 1 QuoteId FROM Quote WHERE Author = 'Winnie the Pooh');
+DECLARE @Q6  uniqueidentifier = (SELECT TOP 1 QuoteId FROM Quote WHERE Author = 'Jim Carrey');
+DECLARE @Q7  uniqueidentifier = (SELECT TOP 1 QuoteId FROM Quote WHERE Author = 'Steve Martin');
+DECLARE @Q8  uniqueidentifier = (SELECT TOP 1 QuoteId FROM Quote WHERE Author = 'Anonymous');
+DECLARE @Q9  uniqueidentifier = (SELECT TOP 1 QuoteId FROM Quote WHERE Author = 'Will Rogers');
+DECLARE @Q10 uniqueidentifier = (SELECT TOP 1 QuoteId FROM Quote WHERE Author = 'Billie Burke');
 
 --distribute quotes among friends
 INSERT INTO FriendQuote

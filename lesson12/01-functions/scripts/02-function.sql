@@ -1,11 +1,11 @@
 USE friends;
 GO
 
--- ============================================================
--- Function: dbo.udf_DaysToBirthday
--- Returns the number of days until the next birthday for a given date.
--- Returns NULL if @Birthday is NULL.
--- ============================================================
+--House cleaning
+DROP FUNCTION IF EXISTS dbo.udf_DaysToBirthday;
+GO
+
+--Create a scalar function that returns the number of days until the next birthday, given a date of birth
 CREATE OR ALTER FUNCTION dbo.udf_DaysToBirthday (@Birthday DATETIME )
 RETURNS INT AS
 BEGIN
@@ -23,3 +23,8 @@ SELECT
     dbo.udf_DaysToBirthday(Birthday) AS DaysToNextBirthday
 FROM dbo.Friend
 ORDER BY DaysToNextBirthday;
+
+
+--House cleaning
+DROP FUNCTION IF EXISTS dbo.udf_DaysToBirthday;
+GO

@@ -20,13 +20,6 @@ CREATE OR ALTER PROCEDURE dbo.usp_GetFriends
     RETURN 0;
 GO
 
---CREATE a function, once created use ALTER to change
-CREATE OR ALTER FUNCTION dbo.udf_FullName(@fn NVARCHAR(200), @ln NVARCHAR(200))
-RETURNS NVARCHAR(400) AS
-BEGIN
-    RETURN CONCAT_WS(' ', @fn, @ln)
-END;
-GO
 
 CREATE OR ALTER FUNCTION dbo.udf_ExecutionSuccess(@ret_code INT, @rows INT)
 RETURNS NVARCHAR(200) AS

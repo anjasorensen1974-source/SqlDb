@@ -1,0 +1,32 @@
+[
+  {
+    "AlbumId": "010E865A-EE57-4EE5-A79C-0C0425675232",
+    "Name": "Dark Side of the Moon",
+    "ReleaseYear": 1973,
+    "Genre": "Progressive Rock"
+  },
+  {
+    "AlbumId": "78BEAC1B-0E32-404F-9067-AA37E94D18ED",
+    "Name": "Rumours",
+    "ReleaseYear": 1977,
+    "Genre": "Soft Rock"
+  },
+  {
+    "AlbumId": "3E8C075A-FFF8-43D7-9ED4-EAA0FA10AD96",
+    "Name": "Back in Black",
+    "ReleaseYear": 1980,
+    "Genre": "Hard Rock"
+  },
+  {
+    "AlbumId": "E4E9C13B-1255-435B-A7C4-868EDBDE3021",
+    "Name": "Thriller",
+    "ReleaseYear": 1982,
+    "Genre": "Pop"
+  },
+  {
+    "AlbumId": "CCD3815E-41B9-498E-8A31-C9183C24100D",
+    "Name": "Kind of Blue",
+    "ReleaseYear": 1959,
+    "Genre": "Jazz"
+  }
+]

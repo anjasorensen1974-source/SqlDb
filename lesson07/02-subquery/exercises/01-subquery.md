@@ -1,4 +1,4 @@
-# Lesson 10 – Exercises: Subqueries
+# Lesson 07 – Exercises: Subqueries
 
 Use the `music` database for all exercises.
 
@@ -116,3 +116,81 @@ Return `Name` and `EstablishedYear` of the matching music groups, ordered by `Es
 **Expected outcome:** All music groups in the single genre that has generated the most combined copies sold, ordered by the year they were established.
 
 **Answer:** [01-subquery.sql](../exercise-answers/01-subquery.sql)
+
+---
+
+## Exercise 5 – Nested Subquery: City with the Most Friends
+
+Use the `friends` database.
+
+The exercise uses the `Friend` and `Address` tables:
+
+**Friend**
+
+| Column | Type | Description |
+|---|---|---|
+| `FriendId` | `uniqueidentifier` | Primary key |
+| `FirstName` | `nvarchar` | Friend's first name |
+| `LastName` | `nvarchar` | Friend's last name |
+| `AddressId` | `uniqueidentifier` | Foreign key to `Address` |
+
+**Address**
+
+| Column | Type | Description |
+|---|---|---|
+| `AddressId` | `uniqueidentifier` | Primary key |
+| `City` | `nvarchar` | City name |
+| `Country` | `nvarchar` | Country name |
+
+---
+
+**Task:** Write a **single SQL query** that lists all friends living in the **city with the most friends**.
+
+Break the problem down before writing the final query:
+
+1. Write a query that counts how many friends live in each city (join `Friend` → `Address`, `GROUP BY City`).
+2. Extend it to return only the **top 1 city** by friend count (`TOP 1 … ORDER BY … DESC`).
+3. Isolate just the `City` value from step 2 by wrapping it as a derived table.
+4. Use the result of step 3 as a scalar subquery in a `WHERE City = (…)` clause against the outer query joining `Friend` and `Address`.
+
+Return `FirstName`, `LastName`, and `City` of the matching friends.
+
+**Hint:** Follow the same four-step pattern as Exercise 4. The derived table in step 3 wraps the `TOP 1` query and must be given an alias. Your final query will contain a subquery nested inside another subquery.
+
+**Expected outcome:** All friends whose address city is the single city that has the highest number of friends living in it.
+
+**Answer:** [01-subquery.sql](../exercise-answers/01-subquery.sql)
+
+---
+
+## Exercise 6 – Nested Subquery: Pets of the Most Common Kind
+
+Use the `friends` database.
+
+The exercise uses the `Friend` and `Pet` tables:
+
+**Pet**
+
+| Column | Type | Description |
+|---|---|---|
+| `PetId` | `uniqueidentifier` | Primary key |
+| `AnimalKind` | `nvarchar` | Animal type (e.g. `'Dog'`, `'Cat'`, `'Rabbit'`) |
+| `Name` | `nvarchar` | Pet's name |
+| `OwnerId` | `uniqueidentifier` | Foreign key to `Friend` |
+
+---
+
+**Task:** Write a **single SQL query** that lists all pets (with their owner's full name) whose `AnimalKind` is the **most common animal type** in the database.
+
+Break the problem down before writing the final query:
+
+1. Write a query that counts pets per `AnimalKind` (`GROUP BY AnimalKind`).
+2. Extend it to return only the **top 1 kind** by count (`TOP 1 … ORDER BY … DESC`).
+3. Isolate just the `AnimalKind` value from step 2 by wrapping it as a derived table.
+4. Use the result of step 3 as a scalar subquery in a `WHERE AnimalKind = (…)` clause. Join `Pet` → `Friend` to include the owner's name.
+
+Return `Pet.Name` as `PetName`, `AnimalKind`, and the owner's full name as `OwnerName` (use `CONCAT_WS`), ordered by `OwnerName` ascending.
+
+**Hint:** The structure mirrors Exercises 4 and 5. Write and verify each step independently, then nest them into a single query.
+
+**Expected outcome:** All pets whose type is the single most frequently occurring `AnimalKind`, together with the full name of each pet's owner.

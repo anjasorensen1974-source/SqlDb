@@ -1,6 +1,10 @@
 USE friends;
 GO
 
+-- ------------------------------------------------------------------
+-- Reminder: the VULNERABLE approach (do NOT do this)
+-- ------------------------------------------------------------------
+
 --SQL Injection example 1=1 is true
 DECLARE @UserInput NVARCHAR(50);
 

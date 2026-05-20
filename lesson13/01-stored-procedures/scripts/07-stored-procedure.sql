@@ -19,3 +19,6 @@ PRINT dbo.udf_ExecutionSuccess(@ret_code, @NrFriends);
 EXEC dbo.usp_GetFriends 'Sweden', 'Stockholm', @NrFriends OUTPUT;
 PRINT dbo.udf_ExecutionSuccess(@ret_code, @NrFriends);
 
+--House cleaning
+DROP PROCEDURE IF EXISTS dbo.usp_GetFriends;
+DROP FUNCTION IF EXISTS dbo.udf_ExecutionSuccess;
