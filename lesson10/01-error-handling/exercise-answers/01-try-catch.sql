@@ -35,17 +35,15 @@ PRINT 'Execution continues after the CATCH block';
 -- Exercise 2: TRY...CATCH with a transaction and ROLLBACK
 -- ============================================================
 
-DROP TABLE IF EXISTS dbo.tmp_album;
-SELECT * INTO dbo.tmp_album FROM dbo.Album;
-
 -- Verify the row before the attempted update
-SELECT Name, MusicGroupId FROM dbo.tmp_album WHERE Name = 'Back in Black';
+SELECT Name, MusicGroupId FROM dbo.Album WHERE Name = 'Back in Black';
 
 BEGIN TRY
     BEGIN TRAN
 
-        -- This UPDATE violates the FK constraint on MusicGroupId
-        UPDATE dbo.tmp_album
+        -- This UPDATE violates the FK constraint on MusicGroupId:
+        -- '00000000-...' does not exist in dbo.MusicGroup
+        UPDATE dbo.Album
         SET MusicGroupId = '00000000-0000-0000-0000-000000000000'
         WHERE Name = 'Back in Black';
 
@@ -60,7 +58,7 @@ BEGIN CATCH
 END CATCH;
 
 -- Confirm the row is unchanged — original MusicGroupId still intact
-SELECT Name, MusicGroupId FROM dbo.tmp_album WHERE Name = 'Back in Black';
+SELECT Name, MusicGroupId FROM dbo.Album WHERE Name = 'Back in Black';
 
 -- ============================================================
 -- Exercise 3: Error logging table and THROW

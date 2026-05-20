@@ -85,13 +85,10 @@ Again print all four error functions in the `CATCH` block, followed by `'Executi
 
 Follow these steps:
 
-1. Create a working copy of the `Album` table:
-   ```sql
-   SELECT * INTO dbo.tmp_album FROM dbo.Album;
-   ```
+1. Before the `TRY…CATCH`, query `dbo.Album` for the `'Back in Black'` row to confirm the current `MusicGroupId`.
 2. Inside a `BEGIN TRY … END TRY`, open a transaction with `BEGIN TRAN`, then attempt an **invalid UPDATE** that tries to set `MusicGroupId` to a value that does not exist as a primary key in `dbo.MusicGroup` (this violates the foreign key constraint):
    ```sql
-   UPDATE dbo.tmp_album
+   UPDATE dbo.Album
    SET MusicGroupId = '00000000-0000-0000-0000-000000000000'
    WHERE Name = 'Back in Black';
    ```
@@ -100,9 +97,9 @@ Follow these steps:
    - Print `ERROR_MESSAGE()`.
    - Print `'Rolling back transaction'`.
    - Check `@@TRANCOUNT > 0` before issuing `ROLLBACK` to avoid a "no transaction" error.
-4. After the `TRY…CATCH`, query `dbo.tmp_album` for the `'Back in Black'` row to confirm the original `MusicGroupId` is intact.
+4. After the `TRY…CATCH`, query `dbo.Album` for the `'Back in Black'` row again to confirm the original `MusicGroupId` is intact.
 
-**Hint:** `@@TRANCOUNT` is greater than zero whenever an open transaction exists. Always check it before calling `ROLLBACK` inside a `CATCH` block — the transaction may have already been terminated by a severe error. `tmp_album` is a copy so no actual `Album` data is harmed.
+**Hint:** `@@TRANCOUNT` is greater than zero whenever an open transaction exists. Always check it before calling `ROLLBACK` inside a `CATCH` block — the transaction may have already been terminated by a severe error. The `ROLLBACK` ensures the real `Album` data is left unchanged.
 
 **Expected outcome:** The `UPDATE` fails, the `CATCH` block fires and rolls back the transaction. The `'Back in Black'` row retains its original `MusicGroupId`.
 
