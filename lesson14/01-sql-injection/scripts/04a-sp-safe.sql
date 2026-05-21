@@ -52,7 +52,7 @@ CREATE OR ALTER PROCEDURE dbo.usp_FindFriendByName
 GO
 
 -- Intention
-EXEC dbo.usp_FindFriendByName 'Diana'; -- works as expected
+EXEC dbo.usp_FindFriendByName 'Padma'; -- works as expected
 
 -- Attack attempt: the semicolon and DROP TABLE are just part of the string value
 EXEC dbo.usp_FindFriendByName 'Whatever''; DROP TABLE #tmpPet --'; --safe, no error, no table dropped

@@ -13,7 +13,7 @@ SELECT * INTO #tmpPet FROM dbo.Pet;
 DECLARE @UserInput NVARCHAR(50);
 
 --Intention
-SET @UserInput = 'Diana';
+SET @UserInput = 'Padma';
 SELECT * FROM dbo.Friend WHERE FirstName = @UserInput;
 EXEC ('SELECT * FROM dbo.Friend WHERE FirstName = ''' + @UserInput + '''');
 

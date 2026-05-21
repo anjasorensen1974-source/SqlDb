@@ -8,7 +8,7 @@ GO
 -- Imagine you have a search box and you want to search for a friend by name
 
 --good when placed in a stored procedure with parameter validation.
-DECLARE @UserInput NVARCHAR(50) = 'Diana';
+DECLARE @UserInput NVARCHAR(50) = 'Padma';
 SELECT * FROM dbo.Friend WHERE FirstName = @UserInput;
 
 --bad when simply generate a query string and execute it without any validation of the input

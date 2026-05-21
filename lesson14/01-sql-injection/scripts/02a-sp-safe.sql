@@ -21,7 +21,7 @@ GO
 DECLARE @UserInput NVARCHAR(50);
 
 -- Normal use looks fine ...
-SET @UserInput = 'Diana';
+SET @UserInput = 'Padma';
 EXEC ('SELECT * FROM dbo.Friend WHERE FirstName = ''' + @UserInput + '''');
 
 -- ... but an attacker can inject SQL that returns the whole table:
@@ -43,16 +43,15 @@ CREATE OR ALTER PROCEDURE dbo.usp_FindFriendByName
     -- The parameter is passed as typed data, not concatenated into SQL text.
     -- Quotes, keywords, and operators inside @FirstName are treated as literal
     -- characters — they can never change the structure of the query.
-    SELECT FriendId, FirstName, LastName, Email
-    FROM dbo.Friend
-    WHERE FirstName = @FirstName;
+        SELECT FriendId, FirstName, LastName, Email
+        FROM dbo.Friend
+        WHERE FirstName = @FirstName;
 GO
 
 -- ------------------------------------------------------------------
 -- Execute: normal input works as expected
--- ------------------------------------------------------------------
+-- ------------------------------------------------------------------   
 
-EXEC dbo.usp_FindFriendByName 'Diana';
 EXEC dbo.usp_FindFriendByName 'Padma';
 
 -- ------------------------------------------------------------------
