@@ -16,6 +16,11 @@ CREATE OR ALTER PROCEDURE dbo.usp_GetFriends
 
     --@@ROWCOUNT always number of rows affected in last statement
     SET @Count = @@ROWCOUNT; 
+
+    --alternative way to get the count, but less efficient as it has to run the query twice
+    --SELECT @Count = COUNT(*) FROM dbo.Friend f 
+    --INNER JOIN dbo.Address a ON f.AddressId = a.AddressId
+    --WHERE a.Country = @Country AND a.City = @City
 GO
 
 --Executing

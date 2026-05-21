@@ -14,17 +14,22 @@ GO
 INSERT INTO #tmp_customer_processed(customer_id, firstname, lastname, Processed)
 SELECT customer_id, first_name, last_name, 0 FROM dbo.customer;
 
+--SELECT * FROM #tmp_customer_processed;
+
+
 --Use array style iteration through the #tmp_customer_processed table, row by row
 DECLARE @row_id INT = 1;
 DECLARE @customer_id INT;
 DECLARE @fullname NVARCHAR(100);
-WHILE EXISTS (SELECT * From #tmp_customer_processed  WHERE Processed = 0) 
+WHILE EXISTS (SELECT 1 From #tmp_customer_processed  WHERE Processed = 0) 
 BEGIN
     
     PRINT 'Do something with row: ' + CAST (@row_id AS NVARCHAR);
    
-    SELECT @customer_id = customer_id,  @fullname = CONCAT_WS(' ', firstname, lastname)from #tmp_customer_processed 
+    SELECT @customer_id = customer_id,  @fullname = CONCAT_WS(' ', firstname, lastname)
+    FROM #tmp_customer_processed 
     WHERE row_id = @row_id;
+    
     PRINT '  - customer_id: ' + CAST (@customer_id AS NVARCHAR);
     PRINT '  - customer name: ' + @fullname;
    

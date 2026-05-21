@@ -7,7 +7,7 @@ DROP FUNCTION IF EXISTS dbo.udf_FullNameEmail;
 GO
 
 --CREATE a function, once created use ALTER to change
-CREATE FUNCTION dbo.udf_FullName(@fn NVARCHAR(200), @ln NVARCHAR(200))
+CREATE OR ALTER FUNCTION dbo.udf_FullName(@fn NVARCHAR(200), @ln NVARCHAR(200))
 RETURNS NVARCHAR(400) AS
 BEGIN
     RETURN CONCAT_WS(' ', @fn, @ln)
@@ -15,7 +15,7 @@ END;
 GO
 
 --CREATE another function, , once created use ALTER to change
-CREATE FUNCTION dbo.udf_FullNameEmail(@fn NVARCHAR(200), @ln NVARCHAR(200), @email NVARCHAR(200))
+CREATE OR ALTER FUNCTION dbo.udf_FullNameEmail(@fn NVARCHAR(200), @ln NVARCHAR(200), @email NVARCHAR(200))
 RETURNS NVARCHAR(400) AS
 BEGIN
     --I can call a function inside anoter function, i.e., nested calls
@@ -29,7 +29,7 @@ BEGIN
 END;
 GO
 
-SELECT FriendId, dbo.udf_FullNameEmail(FirstName, LastName, Email) [Contact] from dbo.Friend;
+SELECT FriendId, dbo.udf_FullNameEmail(FirstName, LastName, Email) [Contact] FROM dbo.Friend;
 
 --House cleaning
 DROP FUNCTION IF EXISTS dbo.udf_FullName;
