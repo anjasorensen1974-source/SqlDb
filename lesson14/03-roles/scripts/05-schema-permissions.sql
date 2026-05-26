@@ -1,4 +1,4 @@
-USE [sql-music];
+USE [music];
 GO
 
 --create a schema that I will assign permissons to role
