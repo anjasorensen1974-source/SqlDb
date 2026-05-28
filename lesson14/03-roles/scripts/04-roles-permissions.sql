@@ -30,7 +30,7 @@ GRANT SELECT ON dbo.Quote to gstUsrRole;
 
 ALTER ROLE gstUsrRole ADD MEMBER HermioneUser;
 ALTER ROLE gstUsrRole ADD MEMBER AlbusUser;
---ALTER ROLE gstUsrRole DROP MEMBER AlbusUser;
+ALTER ROLE gstUsrRole DROP MEMBER AlbusUser;
 ALTER ROLE gstUsrRole ADD MEMBER GandalfUser;
 
 --Impersonate the users

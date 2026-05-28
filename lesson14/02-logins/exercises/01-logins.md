@@ -14,6 +14,7 @@ All scripts must be run as an administrator (`sa` or a `sysadmin` member).
 
 ## Exercise 1 – Create a SQL Server Login
 
+
 **Concepts:** `CREATE LOGIN`, password options, `sys.sql_logins`, safe cleanup with `IF SUSER_ID(...) IS NOT NULL`.
 
 **Task:**
